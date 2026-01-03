@@ -1,0 +1,41 @@
+name = "auditorsec-com"
+type = "javascript"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+# Performance & Security Configuration
+[env.production]
+route = "auditorsec.com/*"
+zone_id = "auto"
+
+# Analytics Engine
+[[analytics_engine_bindings]]
+binding = "ANALYTICS"
+
+# KV Storage for caching
+[[kv_namespaces]]
+binding = "CACHE"
+id = "cache_auditorsec"
+preview_id = "cache_auditorsec_preview"
+
+# Environment Variables
+[env.production.vars]
+ENVIRONMENT = "production"
+SITE_URL = "https://auditorsec.com"
+SECURITY_LEVEL = "high"
+
+# Triggers for scheduled tasks
+[[triggers.crons]]
+cron = "0 0 * * *"
+
+[build]
+command = "npm run build"
+cwd = "./build"
+main_module = "index.js"
+
+# Logging
+[logpush]
+Dataset = "http_requests"
+DestinationConf = "s3://your-bucket"
+Frequency = "high"
+OwnershipToken = "your-token"
