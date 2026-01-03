@@ -40,3 +40,6 @@ Dataset = "http_requests"
 DestinationConf = "s3://your-bucket"
 Frequency = "high"
 OwnershipToken = "your-token"
+
+[assets]
+directory = "./dist"
