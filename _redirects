@@ -1,0 +1,14 @@
+# Redirect non-www to www (optional - uncomment if needed)
+# ^https?://auditorsec\.com/(.*) https://www.auditorsec.com/$1 301!
+
+# Security redirects
+/security.txt https://auditorsec.com/.well-known/security.txt 301
+
+# API redirects for future use
+/api/* https://api.auditorsec.com/:splat 200
+
+# Redirect old URLs if needed
+/old-page /new-page 301
+
+# Default fallback to index.html for SPA routes
+/* /index.html 200
