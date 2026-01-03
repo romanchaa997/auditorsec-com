@@ -1,5 +1,6 @@
 name = "auditorsec-com"
 type = "javascript"
+account_id = "44413650497549d4e08c7040d1710225"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 
